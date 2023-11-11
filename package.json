@@ -1,0 +1,24 @@
+{
+  "type": "module",
+  "name": "kanbas-node-server-app",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node app.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/stevenxngo/kanbas-node-server-app.git"
+  },
+  "author": "Steven Ngo",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/stevenxngo/kanbas-node-server-app/issues"
+  },
+  "homepage": "https://github.com/stevenxngo/kanbas-node-server-app#readme",
+  "dependencies": {
+    "express": "^4.18.2"
+  }
+}
