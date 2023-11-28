@@ -1,12 +1,10 @@
 import Database from "../Database/index.js";
 function CourseRoutes(app) {
   app.get("/api/courses", (req, res) => {
-    // console.log("GET /api/courses")
     const courses = Database.courses;
     res.send(courses);
   });
   app.get("/api/courses/:id", (req, res) => {
-    // console.log("GET /api/courses/:id")
     const { id } = req.params;
     const course = Database.courses.find((c) => c._id === id);
     if (!course) {
@@ -16,7 +14,6 @@ function CourseRoutes(app) {
     res.send(course);
   });
   app.get("/api/courses/:id/title", (req, res) => {
-    // console.log("GET /api/courses/:id/title")
     const { id } = req.params;
     const course = Database.courses.find((c) => c._id === id);
     if (!course) {
@@ -28,7 +25,6 @@ function CourseRoutes(app) {
     res.send(`${number}.${startYear}${startDay}`);
   });
   app.get("/api/courses/:id/description", (req, res) => {
-    // console.log("GET /api/courses/:id/description")
     const { id } = req.params;
     const course = Database.courses.find((c) => c._id === id);
     if (!course) {
@@ -42,7 +38,6 @@ function CourseRoutes(app) {
     );
   });
   app.put("/api/courses/:id", (req, res) => {
-    // console.log("PUT /api/courses/:id")
     const { id } = req.params;
     const course = req.body;
     Database.courses = Database.courses.map((c) =>
@@ -56,7 +51,6 @@ function CourseRoutes(app) {
     res.sendStatus(204);
   });
   app.post("/api/courses", (req, res) => {
-    // console.log("POST /api/courses")
     const course = { ...req.body, _id: new Date().getTime().toString() };
     Database.courses.push(course);
     res.send(course);
